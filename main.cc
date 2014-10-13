@@ -1,17 +1,18 @@
-#include "mainwindow.h"
+#include "mainglwindow.h"
+
 #include <QApplication>
+#include <QFileDialog>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	MainWindow w;
-	w.setWidth(800);
-	w.setHeight(600);
+	MainGLWindow w;
+	w.resize(800, 600);
 
-	w.setMinimumSize(QSize(w.width(), w.height()));
-	w.setMaximumSize(QSize(w.width(), w.height()));
+	QString fileName = QFileDialog::getOpenFileName(0,
+		"Open Video", "/", "Image Files (*.mp4 *.wmv)");
 
-	w.setAnimating(true);
+	w.initializeVideo(fileName.toStdString());
 
 	w.show();
 

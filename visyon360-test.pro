@@ -19,23 +19,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cc\
-        mainwindow.cc \
-    openglwindow.cc \
     meshutils.cc \
     mesh.cc \
     timer.cc
 
-HEADERS  += mainwindow.h \
-    openglwindow.h \
+HEADERS  += \
     meshutils.h \
     mesh.h \
     timer.h
 
 
 OTHER_FILES += \
-    media/reel360.mp4 \
-    media/003.jpg \
-    media/stillalive.mp3
+    media/003.jpg
 
 
 macx {
