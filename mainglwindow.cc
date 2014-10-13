@@ -72,6 +72,9 @@ void MainGLWindow::updateView()
 	float x = m_mousePos.x() * 2 * M_PI;
 	float y = m_mousePos.y() * M_PI;
 
+	if(m_viewFromInside) x = 2*M_PI - x;
+
+
 	m_view.setToIdentity();
 
 	QVector3D eye(

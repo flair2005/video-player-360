@@ -9,8 +9,9 @@ int main(int argc, char *argv[])
 	MainGLWindow w;
 	w.resize(800, 600);
 
+	QString homePath = QDir::toNativeSeparators(QDir::homePath());
 	QString fileName = QFileDialog::getOpenFileName(0,
-		"Open Video", "/", "Image Files (*.mp4 *.wmv)");
+		"Open Video", homePath, "Image Files (*.mp4 *.wmv)");
 
 	w.initializeVideo(fileName.toStdString());
 
