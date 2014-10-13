@@ -10,21 +10,14 @@
 #include <iostream>
 #include <cassert>
 
-#include <QDebug>
-#include <QMediaPlaylist>
-#include <QFile>
 
 MainWindow::MainWindow()
 {
-	//m_mediaPlayer = new QMediaPlayer(this, QMediaPlayer::VideoSurface);
-	m_mediaPlayer = new QMediaPlayer;
-	m_texturePlayer = new VideoTexturePlayer;
 }
 
 MainWindow::~MainWindow()
 {
 	delete m_sphere;
-	delete m_mediaPlayer;
 }
 
 
@@ -59,19 +52,6 @@ void MainWindow::initialize()
 
 	loadTexture();
 
-}
-
-void MainWindow::initializeVideo()
-{
-	// Initialize the Video Player
-
-	m_mediaPlayer->setVideoOutput(m_texturePlayer);
-	QFile file("/Developer/projects/visyon360-test/media/reel360.mp4");
-	if(!file.open(QIODevice::ReadOnly))
-		qDebug() << "Could not open file";
-	m_mediaPlayer->setMedia(QUrl::fromLocalFile("/Developer/projects/visyon360-test/media/reel360.mp4"));
-	m_mediaPlayer->play();
-	std::cout << m_mediaPlayer->duration() << std::endl;
 }
 
 void MainWindow::update()

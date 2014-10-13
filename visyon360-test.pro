@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core opengl gui multimedia
+QT       += core opengl gui
 
 macx{
     CONFIG += c++11
@@ -23,17 +23,13 @@ SOURCES += main.cc\
     openglwindow.cc \
     meshutils.cc \
     mesh.cc \
-    timer.cc \
-    videotextureplayer.cc \
-    mainglwindow.cc
+    timer.cc
 
 HEADERS  += mainwindow.h \
     openglwindow.h \
     meshutils.h \
     mesh.h \
-    timer.h \
-    videotextureplayer.h \
-    mainglwindow.h
+    timer.h
 
 
 OTHER_FILES += \
